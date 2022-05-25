@@ -18,19 +18,19 @@ function App() {
           <div className="nav__container">
             <div className="nav__search">
               <input className="nav__input"></input>
-              {/* AVATAR COMPONENT */}
-              <div className="avatar">
-                <img
-                  src="./assets/Images/Mohan-muruge.jpg"
-                  alt="Avatar Image"
-                  className="avatar__image"
-                />
-              </div>
-
-              <a className="nav__upload" href="/">
-                Upload
-              </a>
             </div>
+            {/* AVATAR COMPONENT */}
+            <div className="avatar">
+              <img
+                src="./assets/Images/Mohan-muruge.jpg"
+                alt="Avatar Image"
+                className="avatar__image"
+              />
+            </div>
+
+            <a className="nav__upload" href="/">
+              Upload
+            </a>
           </div>
         </nav>
       </header>

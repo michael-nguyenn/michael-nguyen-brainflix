@@ -1,6 +1,7 @@
-* {
-  color: black;
-}
+@import "./styles/partials/typography";
+@import "./styles/partials/mixins";
+@import "./styles/partials/variables";
+@import "./styles/partials/fonts";
 
 video {
   border: 1px black solid;
