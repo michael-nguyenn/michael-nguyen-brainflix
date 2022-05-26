@@ -1,8 +1,5 @@
-@import "./styles/partials/typography";
-@import "./styles/partials/mixins";
-@import "./styles/partials/variables";
-@import "./styles/partials/fonts";
-
-video {
-  border: 1px black solid;
-}
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/resets" as *;
