@@ -2,7 +2,7 @@ import "./Navigation.scss";
 import Logo from "../../assets/Logo/BrainFlix-logo.svg";
 import Avatar from "../../assets/Images/Mohan-muruge.jpg";
 
-function Navigation() {
+function Navigation(props) {
   return (
     <nav className="nav">
       <a className="logo" href="/">

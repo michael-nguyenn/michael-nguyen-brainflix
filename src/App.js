@@ -1,30 +1,51 @@
+import { Component } from "react";
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import Video from "./components/Video/Video";
 import VideoInfo from "./components/VideoInfo/VideoInfo";
+import Comments from "./components/Comments/Comments";
 import VideoList from "./components/VideoList/VideoList";
-import VideoDetails from "./data/video-details.json";
-import Videos from "./data/videos.json";
+import videoDetails from "./data/video-details.json";
+import videos from "./data/videos.json";
 
-function App() {
-  console.log(VideoDetails);
-  console.log(Videos);
+class App extends Component {
+  state = {
+    selectedVideo: videoDetails[0],
+  };
 
-  return (
-    <>
-      <header>
-        <Navigation />
-      </header>
+  handleVideoClick = (videoId) => {
+    const newSelectedVideo = videoDetails.find((video) => videoId === video.id);
 
-      <main>
-        <Video />
-        <div className="video-wrapper">
-          <VideoInfo />
-          <VideoList />
-        </div>
-      </main>
-    </>
-  );
+    this.setState({
+      selectedVideo: newSelectedVideo,
+    });
+  };
+
+  render() {
+    const nonSelectedVideo = videos.filter((video) => {
+      return video.id !== this.state.selectedVideo.id;
+    });
+
+    return (
+      <>
+        <header>
+          <Navigation />
+        </header>
+
+        <main>
+          <Video selectedVideo={this.state.selectedVideo} />
+          <div className="video-wrapper">
+            <VideoInfo selectedVideo={this.state.selectedVideo} />
+            <Comments selectedVideo={this.state.selectedVideo} />
+            <VideoList
+              videos={nonSelectedVideo}
+              handleVideoClick={this.handleVideoClick}
+            />
+          </div>
+        </main>
+      </>
+    );
+  }
 }
 
 export default App;

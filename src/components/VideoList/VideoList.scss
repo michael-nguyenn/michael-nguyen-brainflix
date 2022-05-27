@@ -1,1 +1,7 @@
 @use "../../App.scss" as *;
+
+.video-side {
+  &__thumbnail {
+    height: 240px;
+  }
+}
