@@ -16,7 +16,7 @@ function Navigation(props) {
             type="text"
             placeholder="Search"
           ></input>
-          <img src={avatar} alt="Avatar Image" className="avatar" />
+          <img src={avatar} alt="Avatar" className="avatar" />
         </div>
         <button className="button" href="/">
           UPLOAD

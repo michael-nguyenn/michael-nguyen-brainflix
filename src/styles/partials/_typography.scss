@@ -14,6 +14,31 @@ h1 {
   );
 }
 
+h3 {
+  @include font(
+    $bold-font-weight,
+    $section-header-mobile-font-size,
+    $section-header-mobile-line-height
+  );
+}
+
+h4,
+label {
+  @include font(
+    $bold-font-weight,
+    $subheader-mobile-font-size,
+    $subheader-mobile-line-height
+  );
+}
+
+p {
+  @include font(
+    $normal-font-weight,
+    $body-copy-mobile-font-size,
+    $body-copy-mobile-line-height
+  );
+}
+
 a {
   @include font(
     $bold-font-weight,
