@@ -110,5 +110,11 @@ header {
 
   &--form {
     background-image: url("../../assets/Icons/add_comment.svg");
+
+    @include tablet {
+      align-self: center;
+      margin: 0;
+      margin-left: 1.5rem;
+    }
   }
 }

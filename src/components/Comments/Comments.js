@@ -9,7 +9,7 @@ function Comments({ selectedVideo, convertTimeToDate }) {
       <h4 className="comments__count">3 Comments</h4>
       <div className="form">
         <div className="form__icon">
-          <img className="avatar" src={avatar} alt="Avatar" />
+          <img className="form__avatar" src={avatar} alt="Avatar" />
         </div>
 
         <form className="form__container">

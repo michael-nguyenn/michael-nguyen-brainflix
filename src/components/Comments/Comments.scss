@@ -5,6 +5,10 @@
 .comments {
   padding: 0.5rem 1rem 0 1rem;
 
+  @include tablet {
+    padding: 1rem 2.5rem 0 2.5rem;
+  }
+
   &__count {
     padding-bottom: 1rem;
   }
@@ -26,6 +30,11 @@
 
   &__avatar {
     @include icon-size(2rem, 2.2rem);
+
+    @include tablet {
+      margin-right: 0.5rem;
+      @include icon-size(2.5rem, 2.7rem);
+    }
   }
 
   &__container {
@@ -33,11 +42,19 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+    }
   }
 
   &__name {
     margin-bottom: 4px;
     color: $secondary-font-color;
+
+    @include tablet {
+      width: 90%;
+    }
   }
 
   &__input {
@@ -50,6 +67,10 @@
     border-radius: 5px;
     border: 1px solid $border-outline-color;
     background-color: $secondary-background-color;
+
+    @include tablet {
+      height: 3rem;
+    }
 
     &:focus {
       border: 1px $primary-font-color solid;
@@ -77,11 +98,10 @@
   &__icon {
     @include icon-size(2rem, 2.2rem);
 
-    // @include tablet {
-    //   margin-right: 0.5rem;
-    //   height: 3rem;
-    //   width: 3.3rem;
-    // }
+    @include tablet {
+      margin-right: 0.5rem;
+      @include icon-size(2.5rem, 2.7rem);
+    }
   }
 
   &__container {
