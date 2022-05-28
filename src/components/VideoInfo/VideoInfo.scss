@@ -8,6 +8,7 @@
   &__title {
     padding-bottom: 1rem;
     border-bottom: 1px solid $border-outline-color;
+    font-weight: 700;
   }
 
   &__container {
@@ -26,6 +27,10 @@
     padding-bottom: 1rem;
   }
 
+  &__date {
+    color: $secondary-font-color;
+  }
+
   &__secondary {
     width: 50%;
     display: flex;
@@ -42,6 +47,7 @@
 
   &__count {
     width: 65%;
+    color: $secondary-font-color;
 
     &:nth-child(2) {
       padding-bottom: 1rem;

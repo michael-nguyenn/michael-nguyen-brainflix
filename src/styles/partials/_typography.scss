@@ -1,6 +1,26 @@
 @use "./variables" as *;
 @use "./mixins" as *;
-@use "./fonts" as *;
+
+// FONTS
+
+@font-face {
+  font-family: $font-stack;
+  src: url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"),
+    url("/assets/Font/Alternative-files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-stack;
+  src: url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"),
+    url("/assets/Font/Alternative-files/AvenirNextLTProBold.ttf")
+      format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// GLOBAL TYPOGRAPHY
 
 body {
   font-family: $font-stack, Arial, Helvetica, sans-serif;
@@ -12,23 +32,47 @@ h1 {
     $page-header-mobile-font-size,
     $page-header-mobile-line-height
   );
+
+  @include tablet {
+    @include font(
+      $bold-font-weight,
+      $page-header-normal-font-size,
+      $page-header-normal-line-height
+    );
+  }
 }
 
-h3 {
+h3,
+label {
   @include font(
     $bold-font-weight,
     $section-header-mobile-font-size,
     $section-header-mobile-line-height
   );
+
+  @include tablet {
+    @include font(
+      $bold-font-weight,
+      $section-header-normal-font-size,
+      $section-header-normal-line-height
+    );
+  }
 }
 
-h4,
-label {
+h4 {
   @include font(
     $bold-font-weight,
     $subheader-mobile-font-size,
     $subheader-mobile-line-height
   );
+
+  @include tablet {
+    @include font(
+      $bold-font-weight,
+      $subheader-normal-font-size,
+      $subheader-normal-line-height
+    );
+  }
 }
 
 p {
@@ -37,6 +81,14 @@ p {
     $body-copy-mobile-font-size,
     $body-copy-mobile-line-height
   );
+
+  @include tablet {
+    @include font(
+      $normal-font-weight,
+      $body-copy-normal-font-size,
+      $body-copy-normal-line-height
+    );
+  }
 }
 
 a {
@@ -45,4 +97,12 @@ a {
     $labels-buttons-mobile-font-size,
     $labels-buttons-mobile-line-height
   );
+
+  @include tablet {
+    @include font(
+      $bold-font-weight,
+      $labels-buttons-normal-font-size,
+      $labels-buttons-normal-line-height
+    );
+  }
 }
