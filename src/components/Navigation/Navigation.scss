@@ -4,19 +4,39 @@
 
 header {
   padding: 1rem;
+
+  @include tablet {
+    padding: 1rem 2.5rem 1rem 2.5rem;
+  }
 }
 
 .nav {
   @include display-flex(column, center, center);
 
+  @include tablet {
+    flex-direction: row;
+    width: 100%;
+  }
+
   &__form {
     width: 100%;
+
+    @include tablet {
+      @include display-flex(row, center, center);
+    }
   }
 
   &__container {
     @include display-flex(row, space-between, center);
     width: 100%;
     margin-bottom: 1rem;
+
+    @include tablet {
+      display: inline-block;
+      width: 50%;
+      padding-right: 1.5rem;
+      margin: 0;
+    }
   }
 
   &__input {
@@ -29,15 +49,47 @@ header {
     height: 2rem;
     border-radius: 5px;
     border: 1px solid $border-outline-color;
+    background-color: $secondary-background-color;
+
+    @include tablet {
+      width: 100%;
+      margin: 0;
+      height: 2.5rem;
+    }
   }
 }
 
 .logo {
   margin-bottom: 1rem;
+
+  @include tablet {
+    width: 45%;
+    margin: 0;
+    display: flex;
+  }
+
+  &__image {
+    @include tablet {
+      height: 1.5rem;
+    }
+  }
 }
 
 .avatar {
   @include icon-size(2rem, 2.2rem);
+
+  @include tablet {
+    display: none;
+  }
+
+  &--tablet {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      @include icon-size(2.5rem, 2.7rem);
+    }
+  }
 }
 
 .button {
@@ -50,6 +102,11 @@ header {
   background-image: url("../../assets/Icons/upload.svg");
   background-repeat: no-repeat;
   background-position: (0.7rem 50%);
+
+  @include tablet {
+    width: 33%;
+    margin-right: 1.5rem;
+  }
 
   &--form {
     background-image: url("../../assets/Icons/add_comment.svg");

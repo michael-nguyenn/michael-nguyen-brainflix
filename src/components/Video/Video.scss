@@ -6,6 +6,10 @@
   @include container-center;
   background-color: $video-player-colors;
 
+  @include tablet {
+    padding: 0 2.5rem 0 2.5rem;
+  }
+
   &__main {
     width: 100%;
     object-fit: cover;

@@ -21,6 +21,7 @@ function Navigation(props) {
         <button className="button" href="/">
           UPLOAD
         </button>
+        <img src={avatar} alt="Avatar" className="avatar avatar--tablet" />
       </form>
     </nav>
   );
