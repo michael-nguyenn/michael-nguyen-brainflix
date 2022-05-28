@@ -11,6 +11,16 @@
   font-style: normal;
 }
 
+// FAHD PLS DON'T HURT ME
+@font-face {
+  font-family: $font-stack;
+  src: url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"),
+    url("/assets/Font/Alternative-files/AvenirNextLTProDemi.ttf")
+      format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 @font-face {
   font-family: $font-stack;
   src: url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"),
