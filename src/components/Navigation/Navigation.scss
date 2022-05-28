@@ -50,4 +50,8 @@ header {
   background-image: url("../../assets/Icons/upload.svg");
   background-repeat: no-repeat;
   background-position: (0.5rem 50%);
+
+  &--form {
+    background-image: url("../../assets/Icons/add_comment.svg");
+  }
 }
