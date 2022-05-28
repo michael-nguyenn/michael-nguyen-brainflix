@@ -4,7 +4,7 @@ function VideoList({ videos, handleVideoClick }) {
   return (
     // <div className="video-wrapper__right">
     <article className="video-list">
-      <h3 className="video-list__title">NEXT VIDEO</h3>
+      <h3 className="video-list__title">NEXT VIDEOS</h3>
       {videos.map((video) => {
         return (
           <article

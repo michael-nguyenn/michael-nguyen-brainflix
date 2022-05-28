@@ -1,12 +1,21 @@
 @use "../../App.scss" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .video-list {
   padding: 0 1rem 0 1rem;
 
+  @include tablet {
+    padding: 0 2.5rem 0 2.5rem;
+  }
+
   &__title {
     padding: 0.5rem 0 1rem 0;
     color: $secondary-font-color;
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
   }
 }
 
@@ -14,6 +23,10 @@
   padding-bottom: 1rem;
   display: flex;
   cursor: pointer;
+
+  @include tablet {
+    width: 50%;
+  }
 
   &__image {
     width: 50%;
@@ -28,6 +41,10 @@
 
   &__container {
     width: 50%;
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
   }
 
   &__title {
@@ -35,6 +52,11 @@
     text-overflow: ellipsis;
     overflow: auto;
     height: 3rem;
+
+    @include tablet {
+      font-weight: 700;
+      overflow: hidden;
+    }
   }
 
   &__channel {
