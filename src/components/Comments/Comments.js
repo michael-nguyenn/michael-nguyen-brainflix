@@ -1,6 +1,7 @@
 import "./Comments.scss";
+import avatar from "../../assets/Images/Mohan-muruge.jpg";
 
-function Comments({ selectedVideo }) {
+function Comments({ selectedVideo, convertTimeToDate }) {
   const comments = selectedVideo.comments;
 
   return (
@@ -9,9 +10,7 @@ function Comments({ selectedVideo }) {
         <h4 className="comment__count">3 Comments</h4>
 
         <div className="form">
-          <div className="avatar">
-            <img className="avatar__image" src="/" alt="Avatar Image" />
-          </div>
+          <img className="avatar" src={avatar} alt="Avatar Image" />
 
           <form className="new-comment__form">
             <label className="new-comment__label">
@@ -27,13 +26,15 @@ function Comments({ selectedVideo }) {
       </div>
 
       <div className="comments">
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           return (
-            <div className="comments__card">
+            <div className="comments__card" key={index}>
               <div className="comments__icon"></div>
               <div className="comments__container">
                 <p className="comments__name">{comment.name}</p>
-                <p className="comments__date">{comment.timestamp}</p>
+                <p className="comments__date">
+                  {convertTimeToDate(new Date(comment.timestamp))}
+                </p>
                 <p className="comments__entry">{comment.comment}</p>
               </div>
             </div>

@@ -1,1 +1,14 @@
 @use "../../App.scss" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video {
+  @include container-center;
+  background-color: $video-player-colors;
+
+  &__main {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+  }
+}

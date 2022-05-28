@@ -1,1 +1,54 @@
 @use "../../App.scss" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-info {
+  padding: 1.5rem 1rem 1rem 1rem;
+
+  &__title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border-outline-color;
+  }
+
+  &__container {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border-outline-color;
+    width: 100%;
+    @include display-flex(row, flex-start, flex-start);
+  }
+
+  &__primary {
+    width: 50%;
+  }
+
+  &__channel {
+    padding-bottom: 1rem;
+  }
+
+  &__secondary {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    padding-right: 0.5rem;
+
+    &:nth-child(1) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__count {
+    width: 65%;
+
+    &:nth-child(2) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__description {
+    margin-top: 1rem;
+  }
+}

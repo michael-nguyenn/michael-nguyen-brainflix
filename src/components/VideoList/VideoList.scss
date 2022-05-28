@@ -1,7 +1,37 @@
 @use "../../App.scss" as *;
 
+.video-list {
+  padding: 1rem 1rem 0 1rem;
+
+  &__title {
+    padding: 0.5rem 0 1rem 0;
+  }
+}
+
 .video-side {
+  padding-bottom: 1rem;
+  display: flex;
+  cursor: pointer;
+
+  &__image {
+    width: 50%;
+    padding-right: 1rem;
+  }
+
   &__thumbnail {
-    height: 240px;
+    height: 5rem;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &__container {
+    width: 50%;
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    text-overflow: ellipsis;
+    overflow: auto;
+    height: 3rem;
   }
 }

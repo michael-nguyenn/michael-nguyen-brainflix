@@ -1,6 +1,6 @@
 import "./Navigation.scss";
 import Logo from "../../assets/Logo/BrainFlix-logo.svg";
-import Avatar from "../../assets/Images/Mohan-muruge.jpg";
+import avatar from "../../assets/Images/Mohan-muruge.jpg";
 
 function Navigation(props) {
   return (
@@ -16,7 +16,7 @@ function Navigation(props) {
             type="text"
             placeholder="Search"
           ></input>
-          <img src={Avatar} alt="Avatar Image" className="avatar" />
+          <img src={avatar} alt="Avatar Image" className="avatar" />
         </div>
         <button className="button" href="/">
           UPLOAD
