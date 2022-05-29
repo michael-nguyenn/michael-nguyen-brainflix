@@ -1,8 +1,9 @@
 import "./VideoInfo.scss";
 import viewsIcon from "../../assets/Icons/views.svg";
 import likesIcon from "../../assets/Icons/likes.svg";
+import convertTimeToDate from "../../utilities/dateUtils";
 
-function VideoInfo({ selectedVideo, convertTimeToDate }) {
+function VideoInfo({ selectedVideo }) {
   return (
     <section className="video-info">
       <h1 className="video-info__title">{selectedVideo.title}</h1>

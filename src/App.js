@@ -21,14 +21,6 @@ class App extends Component {
     });
   };
 
-  convertTimeToDate(time) {
-    return time.toLocaleDateString("en-US", {
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    });
-  }
-
   render() {
     const nonSelectedVideo = videos.filter((video) => {
       return video.id !== this.state.selectedVideo.id;
@@ -44,14 +36,8 @@ class App extends Component {
           <Video selectedVideo={this.state.selectedVideo} />
           <div className="video-wrapper">
             <div className="video-wrapper__left">
-              <VideoInfo
-                selectedVideo={this.state.selectedVideo}
-                convertTimeToDate={this.convertTimeToDate}
-              />
-              <Comments
-                selectedVideo={this.state.selectedVideo}
-                convertTimeToDate={this.convertTimeToDate}
-              />
+              <VideoInfo selectedVideo={this.state.selectedVideo} />
+              <Comments selectedVideo={this.state.selectedVideo} />
             </div>
             <VideoList
               videos={nonSelectedVideo}

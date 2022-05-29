@@ -1,7 +1,8 @@
 import "./Comments.scss";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
+import convertTimeToDate from "../../utilities/dateUtils";
 
-function Comments({ selectedVideo, convertTimeToDate }) {
+function Comments({ selectedVideo }) {
   const comments = selectedVideo.comments;
 
   return (
