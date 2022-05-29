@@ -109,6 +109,10 @@
     &:nth-child(1) {
       border-top: 1px solid $border-outline-color;
       padding-top: 1rem;
+
+      @include desktop {
+        padding-top: 1.5rem;
+      }
     }
   }
 

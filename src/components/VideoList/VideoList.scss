@@ -9,12 +9,20 @@
     padding: 0 2.5rem 0 2.5rem;
   }
 
+  @include desktop {
+    padding: 0 0 0 2rem;
+  }
+
   &__title {
     padding: 0.5rem 0 1rem 0;
     color: $secondary-font-color;
 
     @include tablet {
       padding-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      padding-top: 2rem;
     }
   }
 }
@@ -41,6 +49,10 @@
     height: 5rem;
     width: 100%;
     border-radius: 5px;
+
+    @include desktop {
+      height: 4.7rem;
+    }
   }
 
   &__container {
@@ -48,10 +60,6 @@
 
     @include tablet {
       padding-bottom: 1.5rem;
-    }
-
-    @include desktop {
-      width: 57%;
     }
   }
 
@@ -64,6 +72,10 @@
     @include tablet {
       font-weight: 700;
       overflow: hidden;
+    }
+
+    @include desktop {
+      width: 11rem;
     }
   }
 
