@@ -4,7 +4,6 @@ import likesIcon from "../../assets/Icons/likes.svg";
 
 function VideoInfo({ selectedVideo, convertTimeToDate }) {
   return (
-    // <div className="video-wrapper__left">
     <section className="video-info">
       <h1 className="video-info__title">{selectedVideo.title}</h1>
       <div className="video-info__container">
@@ -26,7 +25,6 @@ function VideoInfo({ selectedVideo, convertTimeToDate }) {
 
       <p className="video-info__description">{selectedVideo.description}</p>
     </section>
-    // </div>
   );
 }
 

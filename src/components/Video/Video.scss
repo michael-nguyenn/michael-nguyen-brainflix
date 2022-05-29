@@ -3,11 +3,18 @@
 @use "../../styles/partials/variables" as *;
 
 .video {
-  @include container-center;
   background-color: $video-player-colors;
 
   @include tablet {
-    padding: 0 2.5rem 0 2.5rem;
+    padding: 0 2.5rem;
+  }
+
+  @include desktop {
+    padding: 0 11rem;
+  }
+
+  &__wrapper {
+    @include container-center;
   }
 
   &__main {

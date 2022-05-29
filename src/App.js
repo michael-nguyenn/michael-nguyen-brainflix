@@ -43,14 +43,16 @@ class App extends Component {
         <main>
           <Video selectedVideo={this.state.selectedVideo} />
           <div className="video-wrapper">
-            <VideoInfo
-              selectedVideo={this.state.selectedVideo}
-              convertTimeToDate={this.convertTimeToDate}
-            />
-            <Comments
-              selectedVideo={this.state.selectedVideo}
-              convertTimeToDate={this.convertTimeToDate}
-            />
+            <div className="video-wrapper__left">
+              <VideoInfo
+                selectedVideo={this.state.selectedVideo}
+                convertTimeToDate={this.convertTimeToDate}
+              />
+              <Comments
+                selectedVideo={this.state.selectedVideo}
+                convertTimeToDate={this.convertTimeToDate}
+              />
+            </div>
             <VideoList
               videos={nonSelectedVideo}
               handleVideoClick={this.handleVideoClick}
