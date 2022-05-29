@@ -17,6 +17,7 @@ function Comments({ selectedVideo }) {
           <label className="form__name">
             JOIN THE CONVERSATION
             <textarea
+              type="text"
               placeholder="Add a comment"
               className="form__input"
             ></textarea>

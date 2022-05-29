@@ -15,6 +15,7 @@
 
   &__count {
     padding-bottom: 1rem;
+    font-weight: 600;
 
     @include desktop {
       padding: 0.5rem 0 2rem 0;

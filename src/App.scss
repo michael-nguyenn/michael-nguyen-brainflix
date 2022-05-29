@@ -3,6 +3,46 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/resets" as *;
 
+// BUTTON STYLING
+
+.button {
+  width: 100%;
+  height: 2.5rem;
+  color: $primary-background-color;
+  background-color: $primary-action-color;
+  border: none;
+  border-radius: 5px;
+  background-image: url("./assets/Icons/upload.svg");
+  background-repeat: no-repeat;
+  background-position: (0.7rem 50%);
+
+  @include tablet {
+    width: 33%;
+    margin-right: 1.5rem;
+  }
+
+  @include desktop {
+    width: 25%;
+  }
+
+  &--form {
+    background-image: url("./assets/Icons/add_comment.svg");
+
+    @include tablet {
+      align-self: center;
+      margin: 0;
+      margin-left: 1.5rem;
+    }
+
+    @include desktop {
+      width: 50%;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+// VIDEO SECTION CONTAINING STYLING
+
 .video-wrapper {
   @include container-center($max-width-mobile);
 
