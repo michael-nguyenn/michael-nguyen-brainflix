@@ -4,10 +4,16 @@
 @use "./styles/partials/resets" as *;
 
 .video-wrapper {
+  @include container-center($max-width-mobile);
+
+  @include tablet {
+    @include container-center($max-width-tablet);
+  }
+
   @include desktop {
     display: flex;
     padding: 0 7rem;
-    @include container-center;
+    @include container-center($max-width-desktop);
   }
 
   &__left {

@@ -14,12 +14,25 @@
   }
 
   &__wrapper {
-    @include container-center;
+    @include container-center($max-width-mobile);
+
+    @include tablet {
+      @include container-center($max-width-tablet);
+    }
+
+    @include desktop {
+      @include container-center($max-width-desktop);
+    }
   }
 
   &__main {
     width: 100%;
     object-fit: cover;
+    max-height: 12rem;
+
+    @include tablet {
+      max-height: 24rem;
+    }
 
     @include desktop {
       max-height: 33rem;
