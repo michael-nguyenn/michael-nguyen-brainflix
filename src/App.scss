@@ -3,6 +3,23 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/resets" as *;
 
+// HEADER STYLING
+
+header {
+  padding: 1rem;
+  @include container-center($max-width-mobile);
+
+  @include tablet {
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    @include container-center($max-width-tablet);
+  }
+
+  @include desktop {
+    padding: 1.5rem 7rem 1.5rem 7rem;
+    @include container-center($max-width-desktop);
+  }
+}
+
 // BUTTON STYLING
 
 .button {
@@ -14,7 +31,7 @@
   border-radius: 5px;
   background-image: url("./assets/Icons/upload.svg");
   background-repeat: no-repeat;
-  background-position: (0.7rem 50%);
+  background-position: (0.8rem 50%);
 
   @include tablet {
     width: 33%;

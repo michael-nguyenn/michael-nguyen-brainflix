@@ -1,3 +1,4 @@
+import "./App.scss";
 import { Component } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Video from "./components/Video/Video";
@@ -6,7 +7,6 @@ import Comments from "./components/Comments/Comments";
 import VideoList from "./components/VideoList/VideoList";
 import videoDetails from "./data/video-details.json";
 import videos from "./data/videos.json";
-import "./App.scss";
 
 class App extends Component {
   state = {

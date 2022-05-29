@@ -74,7 +74,7 @@
     width: 100%;
     margin-top: 4px;
     margin-bottom: 0.5rem;
-    padding: 0.5rem 0 0 0.5rem;
+    padding: 0.85rem 0 0 0.85rem;
     resize: none;
     height: 6rem;
     border-radius: 5px;
@@ -97,6 +97,10 @@
   display: flex;
   flex-direction: column;
 
+  @include desktop {
+    margin-bottom: 3rem;
+  }
+
   &__card {
     display: flex;
     border-bottom: 1px solid $border-outline-color;
@@ -104,9 +108,9 @@
 
     @include desktop {
       padding: 1.5rem;
-      margin-bottom: 0;
       border: none;
       border-top: 1px solid $border-outline-color;
+      margin: 0;
     }
 
     &:nth-child(1) {
@@ -139,6 +143,7 @@
   &__name {
     width: 50%;
     margin-bottom: 0.5rem;
+    font-weight: 600;
   }
 
   &__date {

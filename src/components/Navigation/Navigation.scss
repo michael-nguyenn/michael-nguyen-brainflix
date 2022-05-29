@@ -2,30 +2,12 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-header {
-  padding: 1rem;
-  @include container-center($max-width-mobile);
-
-  @include tablet {
-    padding: 1rem 2.5rem 1rem 2.5rem;
-    @include container-center($max-width-tablet);
-  }
-
-  @include desktop {
-    padding: 1.5rem 7rem 1.5rem 7rem;
-    @include container-center($max-width-desktop);
-  }
-}
-
 .nav {
   @include display-flex(column, center, center);
 
   @include tablet {
     flex-direction: row;
     width: 100%;
-  }
-
-  @include desktop {
   }
 
   &__form {
@@ -41,9 +23,9 @@ header {
   }
 
   &__container {
-    @include display-flex(row, space-between, center);
     width: 100%;
     margin-bottom: 1rem;
+    @include display-flex(row, space-between, center);
 
     @include tablet {
       display: inline-block;

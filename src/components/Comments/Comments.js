@@ -9,9 +9,9 @@ function Comments({ selectedVideo }) {
     <div className="comments">
       <h4 className="comments__count">3 Comments</h4>
       <div className="form">
-        <div className="form__icon">
+        <article className="form__icon">
           <img className="form__avatar" src={avatar} alt="Avatar" />
-        </div>
+        </article>
 
         <form className="form__container">
           <label className="form__name">

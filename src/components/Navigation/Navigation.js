@@ -2,12 +2,14 @@ import "./Navigation.scss";
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 
-function Navigation(props) {
+function Navigation() {
   return (
     <nav className="nav">
-      <a className="logo" href="/">
-        <img className="logo__image" src={logo} alt="Brainflix Logo" />
-      </a>
+      <div className="logo">
+        <a className="logo__link" href="/">
+          <img className="logo__image" src={logo} alt="Brainflix Logo" />
+        </a>
+      </div>
 
       <form className="nav__form">
         <div className="nav__container">

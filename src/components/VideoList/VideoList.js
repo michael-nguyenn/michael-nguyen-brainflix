@@ -2,7 +2,6 @@ import "./VideoList.scss";
 
 function VideoList({ videos, handleVideoClick }) {
   return (
-    // <div className="video-wrapper__right">
     <article className="video-list">
       <h3 className="video-list__title">NEXT VIDEOS</h3>
       {videos.map((video) => {
@@ -30,7 +29,6 @@ function VideoList({ videos, handleVideoClick }) {
         );
       })}
     </article>
-    // </div>
   );
 }
 
