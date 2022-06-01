@@ -43,6 +43,7 @@
 
   &__avatar {
     @include icon-size(2rem, 2.2rem);
+    object-fit: cover;
 
     @include tablet {
       margin-right: 0.5rem;

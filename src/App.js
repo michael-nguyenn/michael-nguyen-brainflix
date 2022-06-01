@@ -1,50 +1,21 @@
 import "./App.scss";
 import { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Upload from "./pages/Upload/Upload";
 import Navigation from "./components/Navigation/Navigation";
-import Video from "./components/Video/Video";
-import VideoInfo from "./components/VideoInfo/VideoInfo";
-import Comments from "./components/Comments/Comments";
-import VideoList from "./components/VideoList/VideoList";
-import videoDetails from "./data/video-details.json";
-import videos from "./data/videos.json";
 
 class App extends Component {
-  state = {
-    selectedVideo: videoDetails[0],
-  };
-
-  handleVideoClick = (videoId) => {
-    const newSelectedVideo = videoDetails.find((video) => videoId === video.id);
-
-    this.setState({
-      selectedVideo: newSelectedVideo,
-    });
-  };
-
   render() {
-    const nonSelectedVideo = videos.filter((video) => {
-      return video.id !== this.state.selectedVideo.id;
-    });
-
     return (
       <>
-        <header>
+        <Router>
           <Navigation />
-        </header>
-
-        <main>
-          <Video selectedVideo={this.state.selectedVideo} />
-          <div className="video-wrapper">
-            <div className="video-wrapper__left">
-              <VideoInfo selectedVideo={this.state.selectedVideo} />
-              <Comments selectedVideo={this.state.selectedVideo} />
-            </div>
-            <VideoList
-              videos={nonSelectedVideo}
-              handleVideoClick={this.handleVideoClick}
-            />
-          </div>
-        </main>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/upload" component={Upload} />
+          </Switch>
+        </Router>
       </>
     );
   }

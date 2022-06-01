@@ -1,4 +1,5 @@
 import "./Comments.scss";
+import { Link } from "react-router-dom";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import convertTimeToDate from "../../utilities/dateUtils";
 
@@ -22,7 +23,11 @@ function Comments({ selectedVideo }) {
               className="form__input"
             ></textarea>
           </label>
-          <button className="button button--form">COMMENT</button>
+          <button className="button button--form">
+            <Link to="/" className="button__link">
+              COMMENT
+            </Link>
+          </button>
         </form>
       </div>
 
