@@ -13,7 +13,6 @@ class Home extends Component {
   state = {
     videos: null,
     activeVideo: null,
-    // selectedId: null,
   };
 
   getActiveVideo(videoId) {
