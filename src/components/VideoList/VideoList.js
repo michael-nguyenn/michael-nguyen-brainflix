@@ -1,4 +1,5 @@
 import "./VideoList.scss";
+import { Link } from "react-router-dom";
 
 function VideoList({ videos }) {
   return (
@@ -6,7 +7,11 @@ function VideoList({ videos }) {
       <h3 className="video-list__title">NEXT VIDEOS</h3>
       {videos.map((video) => {
         return (
-          <article className="video-side" key={video.id}>
+          <Link
+            to={`/videos/${video.id}`}
+            className="video-side"
+            key={video.id}
+          >
             <div className="video-side__image">
               <img
                 className="video-side__thumbnail"
@@ -19,7 +24,7 @@ function VideoList({ videos }) {
               <p className="video-side__title">{video.title}</p>
               <h4 className="video-side__channel">{video.channel}</h4>
             </div>
-          </article>
+          </Link>
         );
       })}
     </article>

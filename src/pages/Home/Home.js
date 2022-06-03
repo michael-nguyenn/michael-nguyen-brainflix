@@ -11,20 +11,9 @@ import { API_KEY, API_URL } from "../../utilities/api";
 document.title = "BrainFlix";
 class Home extends Component {
   state = {
-    videos: null,
+    videos: [],
     activeVideo: null,
   };
-
-  getActiveVideo(videoId) {
-    return axios
-      .get(`${API_URL}videos/${videoId}?api_key=${API_KEY}`)
-      .then((response) => {
-        this.setState({
-          activeVideo: response.data,
-        });
-      })
-      .catch((err) => console.log(err));
-  }
 
   componentDidMount() {
     axios
@@ -42,12 +31,29 @@ class Home extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const prevId = prevProps.match.params.id;
-    const currId = this.props.match.params.id;
+    const videoId = this.props.match.params.id;
 
-    if (prevId !== currId) {
-      this.getActiveVideo(currId);
+    const prevVideoId = prevProps.match.params.id;
+
+    if (prevVideoId !== videoId) {
+      if (typeof videoId === "undefined") {
+        const defaultVideoId = this.state.videos[0].id;
+        this.getActiveVideo(defaultVideoId);
+      }
+
+      this.getActiveVideo(videoId);
     }
+  }
+
+  getActiveVideo(videoId) {
+    return axios
+      .get(`${API_URL}videos/${videoId}?api_key=${API_KEY}`)
+      .then((response) => {
+        this.setState({
+          activeVideo: response.data,
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -58,6 +64,10 @@ class Home extends Component {
 
     const { image } = activeVideo;
 
+    const nonActiveVideos = this.state.videos.filter((video) => {
+      return video.id !== this.state.activeVideo.id;
+    });
+
     return (
       <>
         <main>
@@ -67,7 +77,7 @@ class Home extends Component {
               <VideoInfo activeVideo={activeVideo} />
               <Comments activeVideo={activeVideo} />
             </div>
-            <VideoList videos={videos} />
+            <VideoList videos={nonActiveVideos} />
           </div>
         </main>
       </>

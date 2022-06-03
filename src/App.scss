@@ -31,6 +31,8 @@ header {
   background-image: url("./assets/Icons/upload.svg");
   background-repeat: no-repeat;
   background-position: (0.8rem 50%);
+  color: $primary-background-color;
+  font-weight: 400;
 
   @include tablet {
     width: 33%;
@@ -39,11 +41,6 @@ header {
 
   @include desktop {
     width: 25%;
-  }
-
-  &__link {
-    color: $primary-background-color;
-    font-weight: 400;
   }
 
   &--form {

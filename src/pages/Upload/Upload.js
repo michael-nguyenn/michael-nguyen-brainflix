@@ -2,12 +2,18 @@ import "./Upload.scss";
 import { Link } from "react-router-dom";
 import videoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 
-function Upload() {
+function Upload(props) {
+  const redirect = (event) => {
+    event.preventDefault();
+    alert("Upload Success!");
+    props.history.push("/");
+  };
+
   return (
     <section className="publish">
       <h1 className="publish__title">Upload Video</h1>
 
-      <form className="publish-form">
+      <form onSubmit={redirect} className="publish-form">
         <div className="publish-form__wrapper">
           <div className="publish-thumbnail">
             <h4 className="publish-thumbnail__container">VIDEO THUMBNAIL</h4>
@@ -42,9 +48,7 @@ function Upload() {
 
           <div className="publish-form__button">
             <button className="button button--form button--publish">
-              <Link to="/" className="button__link">
-                PUBLISH
-              </Link>
+              PUBLISH
             </button>
 
             <Link className="publish-form__cancel">CANCEL</Link>
