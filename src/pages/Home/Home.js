@@ -4,40 +4,70 @@ import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoList from "../../components/VideoList/VideoList";
 import Comments from "../../components/Comments/Comments";
-import videoDetails from "../../data/video-details.json";
-import videos from "../../data/videos.json";
 
+import axios from "axios";
+import { API_KEY, API_URL } from "../../utilities/api";
+
+document.title = "BrainFlix";
 class Home extends Component {
   state = {
-    selectedVideo: videoDetails[0],
+    videos: null,
+    activeVideo: null,
+    selectedId: null,
   };
 
-  handleVideoClick = (videoId) => {
-    const newSelectedVideo = videoDetails.find((video) => videoId === video.id);
+  getActiveVideo(videoId) {
+    return axios
+      .get(`${API_URL}videos/${videoId}?api_key=${API_KEY}`)
+      .then((response) => {
+        this.setState({
+          activeVideo: response.data,
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 
-    this.setState({
-      selectedVideo: newSelectedVideo,
-    });
-  };
+  componentDidMount() {
+    axios
+      .get(`${API_URL}videos/?api_key=${API_KEY}`)
+
+      .then((response) => {
+        this.setState({
+          videos: response.data,
+        });
+
+        const activeVideoId = this.props.match.params.id || response.data[0].id;
+        this.getActiveVideo(activeVideoId);
+      });
+  }
+
+  componentDidUpdate(prevProps) {
+    const prevId = prevProps.match.params.id;
+    const currId = this.props.match.params.id;
+
+    if (prevId !== currId) {
+      this.getActiveVideo(currId);
+    }
+  }
 
   render() {
-    const nonSelectedVideo = videos.filter((video) => {
-      return video.id !== this.state.selectedVideo.id;
-    });
+    const { videos, activeVideo } = this.state;
+    if (videos === null || activeVideo === null) {
+      return <main>Loading...</main>;
+    }
+
+    const { image } = activeVideo;
 
     return (
       <>
         <main>
-          <Video selectedVideo={this.state.selectedVideo} />
+          <Video image={image} />
           <div className="video-wrapper">
             <div className="video-wrapper__left">
-              <VideoInfo selectedVideo={this.state.selectedVideo} />
-              <Comments selectedVideo={this.state.selectedVideo} />
+              <VideoInfo activeVideo={activeVideo} />
+              <Comments activeVideo={activeVideo} />
             </div>
-            <VideoList
-              videos={nonSelectedVideo}
-              handleVideoClick={this.handleVideoClick}
-            />
+            <VideoList videos={videos} />
           </div>
         </main>
       </>

@@ -1,6 +1,6 @@
 import "./VideoList.scss";
 
-function VideoList({ videos, handleVideoClick }) {
+function VideoList({ videos }) {
   return (
     <article className="video-list">
       <h3 className="video-list__title">NEXT VIDEOS</h3>
@@ -9,15 +9,15 @@ function VideoList({ videos, handleVideoClick }) {
           <article
             className="video-side"
             key={video.id}
-            onClick={() => {
-              handleVideoClick(video.id);
-            }}
+            // onClick={() => {
+            //   handleVideoClick(video.id);
+            // }}
           >
             <div className="video-side__image">
               <img
                 className="video-side__thumbnail"
                 src={video.image}
-                alt={`${video.title} by: ${video.channel}`}
+                alt={`${videos.title} by: ${video.channel}`}
               />
             </div>
 

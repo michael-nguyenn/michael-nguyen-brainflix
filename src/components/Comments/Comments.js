@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import convertTimeToDate from "../../utilities/dateUtils";
 
-function Comments({ selectedVideo }) {
-  const comments = selectedVideo.comments;
+function Comments({ activeVideo }) {
+  const { comments } = activeVideo;
 
   return (
     <div className="comments">
