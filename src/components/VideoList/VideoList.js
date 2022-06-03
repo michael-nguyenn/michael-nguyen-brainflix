@@ -6,13 +6,7 @@ function VideoList({ videos }) {
       <h3 className="video-list__title">NEXT VIDEOS</h3>
       {videos.map((video) => {
         return (
-          <article
-            className="video-side"
-            key={video.id}
-            // onClick={() => {
-            //   handleVideoClick(video.id);
-            // }}
-          >
+          <article className="video-side" key={video.id}>
             <div className="video-side__image">
               <img
                 className="video-side__thumbnail"

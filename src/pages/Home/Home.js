@@ -13,7 +13,7 @@ class Home extends Component {
   state = {
     videos: null,
     activeVideo: null,
-    selectedId: null,
+    // selectedId: null,
   };
 
   getActiveVideo(videoId) {
@@ -38,7 +38,8 @@ class Home extends Component {
 
         const activeVideoId = this.props.match.params.id || response.data[0].id;
         this.getActiveVideo(activeVideoId);
-      });
+      })
+      .catch((err) => console.log(err));
   }
 
   componentDidUpdate(prevProps) {
@@ -53,7 +54,7 @@ class Home extends Component {
   render() {
     const { videos, activeVideo } = this.state;
     if (videos === null || activeVideo === null) {
-      return <main>Loading...</main>;
+      return <main className="loading">Loading...</main>;
     }
 
     const { image } = activeVideo;
