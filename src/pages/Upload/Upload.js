@@ -51,7 +51,9 @@ function Upload(props) {
               PUBLISH
             </button>
 
-            <Link className="publish-form__cancel">CANCEL</Link>
+            <Link to="/" className="publish-form__cancel">
+              CANCEL
+            </Link>
           </div>
         </div>
       </form>
