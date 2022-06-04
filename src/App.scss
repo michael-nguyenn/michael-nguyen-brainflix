@@ -3,23 +3,6 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/resets" as *;
 
-// HEADER STYLING
-
-header {
-  padding: 1rem;
-  @include container-center($max-width-mobile);
-
-  @include tablet {
-    padding: 1rem 2.5rem 1rem 2.5rem;
-    @include container-center($max-width-tablet);
-  }
-
-  @include desktop {
-    padding: 1.5rem 7rem 1.5rem 7rem;
-    @include container-center($max-width-desktop);
-  }
-}
-
 // VIDEO SECTION CONTAINING STYLING
 
 .video-wrapper {
