@@ -1,5 +1,6 @@
 import "./Upload.scss";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import videoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 
 function Upload(props) {
@@ -47,9 +48,10 @@ function Upload(props) {
           </div>
 
           <div className="publish-form__button">
-            <button className="button button--form button--publish">
-              PUBLISH
-            </button>
+            <Button
+              className="button button--form button--publish"
+              name="PUBLISH"
+            />
 
             <Link to="/" className="publish-form__cancel">
               CANCEL

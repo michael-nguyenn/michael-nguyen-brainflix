@@ -2,6 +2,7 @@ import "./Navigation.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
+import Button from "../Button/Button";
 
 function Navigation() {
   return (
@@ -22,11 +23,10 @@ function Navigation() {
             ></input>
             <img src={avatar} alt="Avatar" className="avatar" />
           </div>
-          <button className="button">
-            <Link className="button__link" to="/upload">
-              UPLOAD
-            </Link>
-          </button>
+
+          <Link to="/upload">
+            <Button className="button" name="UPLOAD" />
+          </Link>
 
           <img src={avatar} alt="Avatar" className="avatar avatar--tablet" />
         </form>

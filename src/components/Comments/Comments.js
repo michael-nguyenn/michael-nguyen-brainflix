@@ -1,5 +1,6 @@
 import "./Comments.scss";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import convertTimeToDate from "../../utilities/dateUtils";
 
@@ -23,11 +24,10 @@ function Comments({ activeVideo }) {
               className="form__input"
             ></textarea>
           </label>
-          <button className="button button--form">
-            <Link to="/" className="button__link">
-              COMMENT
-            </Link>
-          </button>
+
+          <Link to="/">
+            <Button className="button button--form" name="COMMENT" />
+          </Link>
         </form>
       </div>
 
