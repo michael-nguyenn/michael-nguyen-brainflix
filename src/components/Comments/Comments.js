@@ -25,8 +25,8 @@ function Comments({ activeVideo }) {
             ></textarea>
           </label>
 
-          <Link to="/">
-            <Button className="button button--form" name="COMMENT" />
+          <Link to="/" className="button-wrapper button-wrapper--comment">
+            <Button className="button button--comment" name="COMMENT" />
           </Link>
         </form>
       </div>

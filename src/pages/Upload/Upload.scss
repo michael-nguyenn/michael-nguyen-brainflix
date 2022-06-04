@@ -7,14 +7,26 @@
   &__title {
     padding: 1.5rem 1rem 0 1rem;
     font-weight: 600;
+
+    @include tablet {
+      padding: 2rem 2.5rem 1rem 2.5rem;
+    }
   }
 }
 
 .publish-form {
   padding: 1rem;
 
+  @include tablet {
+    padding: 1rem 2.5rem 2.5rem 2.5rem;
+  }
+
   &__container {
     @include display-flex(column, flex-start, flex-start);
+
+    @include tablet {
+      border-bottom: 1px solid $border-outline-color;
+    }
   }
 
   &__name {
@@ -41,6 +53,10 @@
 
   &__button {
     @include display-flex(column, center, center);
+
+    @include tablet {
+      padding-top: 1.5rem;
+    }
   }
 
   &__cancel {
@@ -55,6 +71,11 @@
     color: $secondary-font-color;
     font-weight: 600;
     padding-bottom: 4px;
+
+    @include tablet {
+      border-top: 1px $border-outline-color solid;
+      padding-top: 2rem;
+    }
   }
 
   &__picture {

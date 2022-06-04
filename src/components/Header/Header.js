@@ -24,7 +24,7 @@ function Navigation() {
             <img src={avatar} alt="Avatar" className="avatar" />
           </div>
 
-          <Link to="/upload">
+          <Link to="/upload" className="button-wrapper">
             <Button className="button" name="UPLOAD" />
           </Link>
 
