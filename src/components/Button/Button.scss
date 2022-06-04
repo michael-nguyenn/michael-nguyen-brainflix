@@ -49,5 +49,10 @@
 
   &--publish {
     background-image: url("../../assets/Icons/publish.svg");
+
+    @include tablet {
+      width: 30%;
+      margin-left: 6rem;
+    }
   }
 }
