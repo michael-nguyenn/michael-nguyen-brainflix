@@ -16,7 +16,7 @@ function VideoList({ videos }) {
               <img
                 className="video-side__thumbnail"
                 src={video.image}
-                alt={`${videos.title} by: ${video.channel}`}
+                alt={`${video.title} by: ${video.channel}`}
               />
             </div>
 
