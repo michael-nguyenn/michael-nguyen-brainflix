@@ -16,7 +16,7 @@ function Upload(props) {
       <form onSubmit={redirect} className="publish-form">
         <div className="publish-form__wrapper">
           <div className="publish-thumbnail">
-            <h4 className="publish-thumbnail__container">VIDEO THUMBNAIL</h4>
+            <h4 className="publish-thumbnail__title">VIDEO THUMBNAIL</h4>
             <img
               className="publish-thumbnail__picture"
               src={videoThumbnail}

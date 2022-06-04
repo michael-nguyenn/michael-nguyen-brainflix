@@ -1,0 +1,65 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.publish {
+  border-top: 1px $border-outline-color solid;
+
+  &__title {
+    padding: 1.5rem 1rem 0 1rem;
+    font-weight: 600;
+  }
+}
+
+.publish-form {
+  padding: 1rem;
+
+  &__container {
+    @include display-flex(column, flex-start, flex-start);
+  }
+
+  &__name {
+    color: $secondary-font-color;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  &__input {
+    width: 100%;
+    margin: 4px 0 1rem 0;
+    padding-left: 0.5rem;
+    resize: none;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid $border-outline-color;
+    background-color: $secondary-background-color;
+
+    &--large {
+      height: 6rem;
+      padding: 0.5rem 0 0 0.5rem;
+    }
+  }
+
+  &__button {
+    @include display-flex(column, center, center);
+  }
+
+  &__cancel {
+    color: $primary-action-color;
+    margin-top: 2rem;
+    font-weight: 600;
+  }
+}
+
+.publish-thumbnail {
+  &__title {
+    color: $secondary-font-color;
+    font-weight: 600;
+    padding-bottom: 4px;
+  }
+
+  &__picture {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+}
