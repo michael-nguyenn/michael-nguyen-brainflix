@@ -1,14 +1,15 @@
 import "./Home.scss";
 import { Component } from "react";
+import axios from "axios";
+import { API_KEY, API_URL } from "../../utilities/api";
+
 import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoList from "../../components/VideoList/VideoList";
 import Comments from "../../components/Comments/Comments";
 
-import axios from "axios";
-import { API_KEY, API_URL } from "../../utilities/api";
-
 document.title = "BrainFlix";
+
 class Home extends Component {
   state = {
     videos: [],
@@ -18,7 +19,6 @@ class Home extends Component {
   componentDidMount() {
     axios
       .get(`${API_URL}videos/?api_key=${API_KEY}`)
-
       .then((response) => {
         this.setState({
           videos: response.data,
