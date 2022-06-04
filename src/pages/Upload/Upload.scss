@@ -21,12 +21,19 @@
     padding: 1rem 2.5rem 2.5rem 2.5rem;
   }
 
-  &__container {
-    @include display-flex(column, flex-start, flex-start);
-
+  &__wrapper {
     @include tablet {
+      border-top: 1px solid $border-outline-color;
       border-bottom: 1px solid $border-outline-color;
     }
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__container {
+    @include display-flex(column, flex-start, flex-start);
   }
 
   &__name {
@@ -80,7 +87,6 @@
     padding-bottom: 4px;
 
     @include tablet {
-      border-top: 1px $border-outline-color solid;
       padding-top: 2rem;
     }
   }

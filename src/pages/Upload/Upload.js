@@ -46,17 +46,16 @@ function Upload(props) {
               ></textarea>
             </label>
           </div>
+        </div>
+        <div className="publish-form__button">
+          <Button
+            className="button button--form button--publish"
+            name="PUBLISH"
+          />
 
-          <div className="publish-form__button">
-            <Button
-              className="button button--form button--publish"
-              name="PUBLISH"
-            />
-
-            <Link to="/" className="publish-form__cancel">
-              CANCEL
-            </Link>
-          </div>
+          <Link to="/" className="publish-form__cancel">
+            CANCEL
+          </Link>
         </div>
       </form>
     </section>
