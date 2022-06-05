@@ -1,7 +1,7 @@
 import "./Home.scss";
 import { Component } from "react";
 import axios from "axios";
-import { API_KEY, API_URL } from "../../utilities/api";
+import { API_KEY, API_URL } from "../../utilities/apiUtils";
 
 import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
