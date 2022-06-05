@@ -41,7 +41,7 @@ class Home extends Component {
         this.getActiveVideo(defaultVideoId);
       }
 
-      this.getActiveVideo(videoId);
+      this.getActiveVideo(videoId).then(window.scrollTo(0, 0));
     }
   }
 
