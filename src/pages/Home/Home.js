@@ -7,8 +7,6 @@ import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoList from "../../components/VideoList/VideoList";
 
-document.title = "BrainFlix";
-
 class Home extends Component {
   state = {
     videos: [],
@@ -34,7 +32,7 @@ class Home extends Component {
 
     const prevVideoId = prevProps.match.params.id;
 
-    if (prevVideoId !== videoId) {
+    if (videoId !== prevVideoId) {
       if (typeof videoId === "undefined") {
         const defaultVideoId = this.state.videos[0].id;
         this.getActiveVideo(defaultVideoId);

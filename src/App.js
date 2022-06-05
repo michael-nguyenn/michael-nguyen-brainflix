@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
 
+document.title = "BrainFlix";
+
 class App extends Component {
   render() {
     return (
