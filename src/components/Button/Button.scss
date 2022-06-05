@@ -54,5 +54,10 @@
       width: 30%;
       margin-left: 6rem;
     }
+
+    @include desktop {
+      width: 15%;
+      margin-left: 4rem;
+    }
   }
 }
