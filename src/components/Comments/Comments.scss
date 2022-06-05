@@ -69,6 +69,10 @@
     @include tablet {
       width: 90%;
     }
+
+    @include desktop {
+      width: 80%;
+    }
   }
 
   &__input {
