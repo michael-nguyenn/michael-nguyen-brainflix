@@ -4,7 +4,7 @@ import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import Button from "../Button/Button";
 
-function Navigation() {
+function Header() {
   return (
     <header>
       <nav className="nav">
@@ -35,4 +35,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default Header;

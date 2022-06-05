@@ -15,7 +15,12 @@ function Comments({ activeVideo }) {
           <img className="form__avatar" src={avatar} alt="Avatar" />
         </article>
 
-        <form className="form__container">
+        <form
+          className="form__container"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <label className="form__name">
             JOIN THE CONVERSATION
             <textarea
@@ -24,10 +29,7 @@ function Comments({ activeVideo }) {
               className="form__input"
             ></textarea>
           </label>
-
-          <Link to="/" className="button-wrapper button-wrapper--comment">
-            <Button className="button button--comment" name="COMMENT" />
-          </Link>
+          <Button className="button button--comment" name="COMMENT" />
         </form>
       </div>
 

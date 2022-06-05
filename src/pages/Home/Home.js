@@ -1,12 +1,12 @@
 import "./Home.scss";
+import { API_KEY, API_URL } from "../../utilities/apiUtils";
 import { Component } from "react";
 import axios from "axios";
-import { API_KEY, API_URL } from "../../utilities/apiUtils";
 
 import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
-import VideoList from "../../components/VideoList/VideoList";
 import Comments from "../../components/Comments/Comments";
+import VideoList from "../../components/VideoList/VideoList";
 
 document.title = "BrainFlix";
 
@@ -77,7 +77,7 @@ class Home extends Component {
               <VideoInfo activeVideo={activeVideo} />
               <Comments activeVideo={activeVideo} />
             </div>
-            <VideoList videos={nonActiveVideos} />
+            <VideoList nonActiveVideos={nonActiveVideos} />
           </div>
         </main>
       </>

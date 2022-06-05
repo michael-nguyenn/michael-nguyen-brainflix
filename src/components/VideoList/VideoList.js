@@ -1,11 +1,11 @@
 import "./VideoList.scss";
 import { Link } from "react-router-dom";
 
-function VideoList({ videos }) {
+function VideoList({ nonActiveVideos }) {
   return (
     <article className="video-list">
       <h3 className="video-list__title">NEXT VIDEOS</h3>
-      {videos.map((video) => {
+      {nonActiveVideos.map((video) => {
         return (
           <Link
             to={`/videos/${video.id}`}
