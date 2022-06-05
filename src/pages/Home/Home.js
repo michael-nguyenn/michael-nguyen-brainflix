@@ -5,7 +5,6 @@ import axios from "axios";
 
 import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
-import Comments from "../../components/Comments/Comments";
 import VideoList from "../../components/VideoList/VideoList";
 
 document.title = "BrainFlix";
@@ -73,10 +72,7 @@ class Home extends Component {
         <main>
           <Video image={image} />
           <div className="video-wrapper">
-            <div className="video-wrapper__left">
-              <VideoInfo activeVideo={activeVideo} />
-              <Comments activeVideo={activeVideo} />
-            </div>
+            <VideoInfo activeVideo={activeVideo} />
             <VideoList nonActiveVideos={nonActiveVideos} />
           </div>
         </main>

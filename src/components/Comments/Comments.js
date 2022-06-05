@@ -1,12 +1,9 @@
 import "./Comments.scss";
-import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import convertTimeToDate from "../../utilities/dateUtils";
 
-function Comments({ activeVideo }) {
-  const { comments } = activeVideo;
-
+function Comments({ comments }) {
   return (
     <div className="comments">
       <h4 className="comments__count">{`${comments.length} Comments`}</h4>
