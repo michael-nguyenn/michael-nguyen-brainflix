@@ -1,5 +1,5 @@
 import "./Home.scss";
-import { API_KEY, API_URL } from "../../utilities/apiUtils";
+import { API_URL } from "../../utilities/apiUtils";
 import { Component } from "react";
 import axios from "axios";
 
@@ -15,7 +15,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios
-      .get(`${API_URL}videos/?api_key=${API_KEY}`)
+      .get(`${API_URL}`)
       .then((response) => {
         this.setState({
           videos: response.data,
@@ -44,7 +44,7 @@ class Home extends Component {
 
   getActiveVideo(videoId) {
     return axios
-      .get(`${API_URL}videos/${videoId}?api_key=${API_KEY}`)
+      .get(`${API_URL}/${videoId}`)
       .then((response) => {
         this.setState({
           activeVideo: response.data,
