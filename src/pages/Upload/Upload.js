@@ -2,20 +2,39 @@ import "./Upload.scss";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import videoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import axios from "axios";
+import { API_URL } from "../../utilities/apiUtils";
 
 function Upload(props) {
-  const redirect = (event) => {
+  // const redirect = (event) => {
+  //   event.preventDefault();
+  //   alert("Upload Success!");
+  //   props.history.push("/");
+  // };
+
+  function handleOnSubmit(event) {
     event.preventDefault();
-    alert("Upload Success!");
-    props.history.push("/");
-  };
+
+    const newVideoUpload = {
+      title: event.target.title.value,
+      description: event.target.description.value,
+    };
+
+    axios
+      .post(API_URL, newVideoUpload)
+
+      .then(() => {
+        alert("Upload Success!");
+        props.history.push("/");
+      });
+  }
 
   return (
     <section className="publish">
       <div className="publish__wrapper">
         <h1 className="publish__title">Upload Video</h1>
 
-        <form onSubmit={redirect} className="publish-form">
+        <form onSubmit={handleOnSubmit} className="publish-form">
           <div className="publish-form__wrapper">
             <div className="publish-thumbnail">
               <h4 className="publish-thumbnail__title">VIDEO THUMBNAIL</h4>
@@ -33,7 +52,7 @@ function Upload(props) {
                   className="publish-form__input"
                   type="text"
                   placeholder="Add a title to your video"
-                  name="name"
+                  name="title"
                 ></input>
               </label>
 
