@@ -10,16 +10,14 @@ document.title = "BrainFlix";
 class App extends Component {
   render() {
     return (
-      <>
-        <Router>
-          <Header />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/videos/:id" component={Home} />
-            <Route path="/upload" component={Upload} />
-          </Switch>
-        </Router>
-      </>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/videos/:id" component={Home} />
+          <Route path="/upload" component={Upload} />
+        </Switch>
+      </Router>
     );
   }
 }
