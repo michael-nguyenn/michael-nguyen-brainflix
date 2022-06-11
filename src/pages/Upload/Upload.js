@@ -8,7 +8,6 @@ import { API_URL } from "../../utilities/apiUtils";
 function Upload(props) {
   // const redirect = (event) => {
   //   event.preventDefault();
-  //   alert("Upload Success!");
   //   props.history.push("/");
   // };
 
@@ -24,7 +23,6 @@ function Upload(props) {
       .post(API_URL, newVideoUpload)
 
       .then(() => {
-        alert("Upload Success!");
         props.history.push("/");
       });
   }
