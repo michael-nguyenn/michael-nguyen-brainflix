@@ -1,24 +1,27 @@
 import "./Upload.scss";
-import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import videoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import axios from "axios";
 import { API_URL } from "../../utilities/apiUtils";
 
 function Upload(props) {
-  // const redirect = (event) => {
-  //   event.preventDefault();
-  //   props.history.push("/");
-  // };
+  // HANDLING CANCEL BUTTON TO REDIRECT TO HOME PAGE
+  function redirect(event) {
+    event.preventDefault();
+    props.history.push("/");
+  }
 
+  // HANDLING FORM SUBMIT FOR NEW VIDEO UPLOADS
   function handleOnSubmit(event) {
     event.preventDefault();
 
+    //COLLECTING USER INPUT
     const newVideoUpload = {
       title: event.target.title.value,
       description: event.target.description.value,
     };
 
+    // MAKING POST REQUEST TO API ENDPOINT AND REDIRECTING THEM
     axios
       .post(API_URL, newVideoUpload)
 
@@ -68,9 +71,9 @@ function Upload(props) {
           <div className="publish-form__button">
             <Button className="button button--publish" name="PUBLISH" />
 
-            <Link to="/" className="publish-form__cancel">
+            <button onClick={redirect} className="publish-form__cancel">
               CANCEL
-            </Link>
+            </button>
           </div>
         </form>
       </div>
