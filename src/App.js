@@ -8,12 +8,28 @@ import Upload from "./pages/Upload/Upload";
 document.title = "BrainFlix";
 
 class App extends Component {
+  state = {
+    isUploaded: false,
+  };
+
+  // CREATE A FUNCTION TO CHANGE THE STATE OF ISUPLOADED
+
+  // PASS IT INTO THE UPLOADED PAGE
+
+  // AFTER THE POST REQUEST, USE FUNCTION TO SET STATE OF ISUPLOADED
+
   render() {
     return (
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => (
+              <Home {...routerProps} isUploaded={this.state.isUploaded} />
+            )}
+          />
           <Route path="/videos/:id" component={Home} />
           <Route path="/upload" component={Upload} />
         </Switch>

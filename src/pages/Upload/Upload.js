@@ -54,6 +54,7 @@ function Upload(props) {
                   type="text"
                   placeholder="Add a title to your video"
                   name="title"
+                  required
                 ></input>
               </label>
 
@@ -64,6 +65,7 @@ function Upload(props) {
                   type="text"
                   placeholder="Add a description to your video"
                   name="description"
+                  required
                 ></textarea>
               </label>
             </div>

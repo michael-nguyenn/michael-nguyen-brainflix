@@ -44,21 +44,23 @@ class Home extends Component {
     // IF NEW VIDEO ID IS GENERATED
     if (videoId !== prevVideoId) {
       // SETTING VIDEO ID DEPENDING IF THERE IS A VALID URL OR NOT
+      // console.log(typeof videoId);
+
       typeof videoId === "undefined"
         ? (videoId = this.state.videos[0].id)
         : (videoId = this.props.match.params.id);
-    }
 
-    // MAKING AXIOS CALL AND SETTING STATE
-    axios
-      .get(`${API_URL}/${videoId}`)
-      .then((response) => {
-        this.setState({
-          activeVideo: response.data,
-        });
-      })
-      // .then(window.scrollTo(0, 0))
-      .catch((err) => console.log(err));
+      // MAKING AXIOS CALL AND SETTING STATE
+      axios
+        .get(`${API_URL}/${videoId}`)
+        .then((response) => {
+          this.setState({
+            activeVideo: response.data,
+          });
+        })
+        .then(window.scrollTo(0, 0))
+        .catch((err) => console.log(err));
+    }
   }
 
   render() {
@@ -76,15 +78,17 @@ class Home extends Component {
     });
 
     return (
-      <>
-        <main>
-          <Video image={image} />
-          <div className="video-wrapper">
-            <VideoInfo activeVideo={activeVideo} />
-            <VideoList nonActiveVideos={nonActiveVideos} />
-          </div>
-        </main>
-      </>
+      // NEED TO DO SHORT CIRCUIT FOR H1 COMPONENT. IF ISUPLOADED = FALSE THEN DO NOT DISPLAY
+      // IN THE DIV YOU'LL HAVE A BUTTON TO REVERT STATE BACK TO FALSE
+
+      <main>
+        <h1>Video Upload Success</h1>
+        <Video image={image} />
+        <div className="video-wrapper">
+          <VideoInfo activeVideo={activeVideo} />
+          <VideoList nonActiveVideos={nonActiveVideos} />
+        </div>
+      </main>
     );
   }
 }
