@@ -6,6 +6,7 @@ import axios from "axios";
 import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoList from "../../components/VideoList/VideoList";
+import UploadMessage from "../../components/UploadMessage/UploadMessage";
 
 class Home extends Component {
   //INITIAL STATE
@@ -82,7 +83,7 @@ class Home extends Component {
 
     return (
       <main>
-        {this.props.isUploaded && <h1>Video Upload Success</h1>}
+        {this.props.isUploaded && <UploadMessage />}
         <Video image={image} />
         <div className="video-wrapper">
           <VideoInfo activeVideo={activeVideo} />

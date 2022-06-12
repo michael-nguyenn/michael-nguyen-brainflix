@@ -12,15 +12,12 @@ class App extends Component {
     isUploaded: false,
   };
 
-  // CREATE A FUNCTION TO CHANGE THE STATE OF ISUPLOADED FROM FALSE TO TRUE
-
-  handleUpload() {
-    this.setState((prevState) => ({
-      isUploaded: !prevState.isUploaded,
-    }));
-  }
-
-  handleUpload = this.handleUpload.bind(this);
+  // CREATE A FUNCTION TO TOGGLE THE STATE OF ISUPLOADED FROM FALSE TO TRUE
+  handleUpload = () => {
+    this.setState({
+      isUploaded: !this.state.isUploaded,
+    });
+  };
 
   // PASS IT INTO THE UPLOADED PAGE AS PROPS
 
