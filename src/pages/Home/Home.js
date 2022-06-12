@@ -44,7 +44,6 @@ class Home extends Component {
     // IF NEW VIDEO ID IS GENERATED
     if (videoId !== prevVideoId) {
       // SETTING VIDEO ID DEPENDING IF THERE IS A VALID URL OR NOT
-      // console.log(typeof videoId);
 
       typeof videoId === "undefined"
         ? (videoId = this.state.videos[0].id)
