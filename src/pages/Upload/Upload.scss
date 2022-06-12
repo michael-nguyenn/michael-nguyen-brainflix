@@ -98,6 +98,8 @@
     color: $primary-action-color;
     margin-top: 2rem;
     font-weight: 600;
+    border: none;
+    background-color: #fff;
 
     @include tablet {
       margin: 0;

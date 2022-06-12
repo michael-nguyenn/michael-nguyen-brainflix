@@ -27,6 +27,7 @@ function Upload(props) {
 
       .then(() => {
         props.history.push("/");
+        // AFTER THE POST REQUEST, USE FUNCTION TO SET STATE OF ISUPLOADED
       });
   }
 
@@ -73,7 +74,11 @@ function Upload(props) {
           <div className="publish-form__button">
             <Button className="button button--publish" name="PUBLISH" />
 
-            <button onClick={redirect} className="publish-form__cancel">
+            <button
+              onClick={redirect}
+              className="publish-form__cancel"
+              type="button"
+            >
               CANCEL
             </button>
           </div>

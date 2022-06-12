@@ -26,9 +26,9 @@ class Home extends Component {
     const activeVideoId = this.props.match.params.id || videos.data[0].id;
 
     // SECOND AXIOS CALL TO GRAB SPECIFIC VIDEO ID
-    const activeVideo = await axios
-      .get(`${API_URL}/${activeVideoId}`)
-      .catch((err) => console.log(err));
+    const activeVideo = await this.getVideoById(activeVideoId).catch((err) =>
+      console.log(err)
+    );
 
     // SETTING STATE
     this.setState({
@@ -50,8 +50,7 @@ class Home extends Component {
         : (videoId = this.props.match.params.id);
 
       // MAKING AXIOS CALL AND SETTING STATE
-      axios
-        .get(`${API_URL}/${videoId}`)
+      this.getVideoById(videoId)
         .then((response) => {
           this.setState({
             activeVideo: response.data,
@@ -61,6 +60,11 @@ class Home extends Component {
         .catch((err) => console.log(err));
     }
   }
+
+  // GETTING VIDEO BY ID
+  getVideoById = (videoId) => {
+    return axios.get(`${API_URL}/${videoId}`);
+  };
 
   render() {
     // SETTING CONDITIONAL TO ENSURE THAT DATA IS RETRIEVED BEFORE PASSING INTO OTHER COMPONENTS
@@ -77,11 +81,11 @@ class Home extends Component {
     });
 
     return (
-      // NEED TO DO SHORT CIRCUIT FOR H1 COMPONENT. IF ISUPLOADED = FALSE THEN DO NOT DISPLAY
-      // IN THE DIV YOU'LL HAVE A BUTTON TO REVERT STATE BACK TO FALSE
-
       <main>
-        <h1>Video Upload Success</h1>
+        {/* SHORT CIRCUIT... ISUPLOADED:TRUE && <BUTTON></BUTTON>*/}
+        {/* <h1 {...this.props}>VIDEO SUCCESS??</h1> */}
+        <h1>UPLOAD SUCCESS</h1>
+        {/* ONCE THIS RENDERS, WE NEED TO TOGGLE ISUPLOADED BACK TO FALSE */}
         <Video image={image} />
         <div className="video-wrapper">
           <VideoInfo activeVideo={activeVideo} />

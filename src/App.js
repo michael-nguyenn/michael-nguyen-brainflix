@@ -12,11 +12,15 @@ class App extends Component {
     isUploaded: false,
   };
 
-  // CREATE A FUNCTION TO CHANGE THE STATE OF ISUPLOADED
+  // CREATE A FUNCTION TO CHANGE THE STATE OF ISUPLOADED FROM FALSE TO TRUE
 
-  // PASS IT INTO THE UPLOADED PAGE
+  handleUpload() {
+    this.setState = {
+      isUploaded: true,
+    };
+  }
 
-  // AFTER THE POST REQUEST, USE FUNCTION TO SET STATE OF ISUPLOADED
+  // PASS IT INTO THE UPLOADED PAGE AS PROPS
 
   render() {
     return (
@@ -31,7 +35,13 @@ class App extends Component {
             )}
           />
           <Route path="/videos/:id" component={Home} />
-          <Route path="/upload" component={Upload} />
+          <Route
+            path="/upload"
+            component={Upload}
+            // render={(props) => {
+            //   // <Upload handleUpload={this.handleUpload} />;
+            // }}
+          />
         </Switch>
       </Router>
     );
