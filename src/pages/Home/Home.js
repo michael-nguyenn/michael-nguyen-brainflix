@@ -82,10 +82,7 @@ class Home extends Component {
 
     return (
       <main>
-        {/* SHORT CIRCUIT... ISUPLOADED:TRUE && <BUTTON></BUTTON>*/}
-        {/* <h1 {...this.props}>VIDEO SUCCESS??</h1> */}
-        <h1>UPLOAD SUCCESS</h1>
-        {/* ONCE THIS RENDERS, WE NEED TO TOGGLE ISUPLOADED BACK TO FALSE */}
+        {this.props.isUploaded && <h1>Video Upload Success</h1>}
         <Video image={image} />
         <div className="video-wrapper">
           <VideoInfo activeVideo={activeVideo} />

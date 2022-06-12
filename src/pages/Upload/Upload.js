@@ -21,13 +21,14 @@ function Upload(props) {
       description: event.target.description.value,
     };
 
-    // MAKING POST REQUEST TO API ENDPOINT AND REDIRECTING THEM
+    // MAKING POST REQUEST TO API ENDPOINT AND REDIRECT USER
     axios
       .post(API_URL, newVideoUpload)
 
       .then(() => {
         props.history.push("/");
-        // AFTER THE POST REQUEST, USE FUNCTION TO SET STATE OF ISUPLOADED
+        props.handleUpload();
+        setTimeout(props.handleUpload, 2500);
       });
   }
 

@@ -15,10 +15,12 @@ class App extends Component {
   // CREATE A FUNCTION TO CHANGE THE STATE OF ISUPLOADED FROM FALSE TO TRUE
 
   handleUpload() {
-    this.setState = {
-      isUploaded: true,
-    };
+    this.setState((prevState) => ({
+      isUploaded: !prevState.isUploaded,
+    }));
   }
+
+  handleUpload = this.handleUpload.bind(this);
 
   // PASS IT INTO THE UPLOADED PAGE AS PROPS
 
@@ -37,10 +39,9 @@ class App extends Component {
           <Route path="/videos/:id" component={Home} />
           <Route
             path="/upload"
-            component={Upload}
-            // render={(props) => {
-            //   // <Upload handleUpload={this.handleUpload} />;
-            // }}
+            render={(routerProps) => (
+              <Upload {...routerProps} handleUpload={this.handleUpload} />
+            )}
           />
         </Switch>
       </Router>
