@@ -1,11 +1,27 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .upload-success {
-  background-color: $primary-action-color;
-  color: $primary-background-color;
-  width: 30%;
-  margin: 1rem auto;
-  padding: 0.2rem;
-  text-align: center;
-  font-weight: 400;
+  padding: 0 1rem;
+  @include container-center($max-width-mobile);
+
+  &__text {
+    color: $primary-background-color;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: $subheader-mobile-font-size;
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      background-color: $primary-action-color;
+    }
+    100% {
+      background-color: $hover-state-color;
+    }
+  }
 }
