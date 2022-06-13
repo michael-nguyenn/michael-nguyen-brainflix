@@ -8,6 +8,7 @@ import Upload from "./pages/Upload/Upload";
 document.title = "BrainFlix";
 
 class App extends Component {
+  // SETTING INITIAL STATE
   state = {
     isUploaded: false,
   };
@@ -18,8 +19,6 @@ class App extends Component {
       isUploaded: !this.state.isUploaded,
     });
   };
-
-  // PASS IT INTO THE UPLOADED PAGE AS PROPS
 
   render() {
     return (
