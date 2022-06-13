@@ -85,6 +85,7 @@
     border-radius: 5px;
     border: 1px solid $border-outline-color;
     background-color: $secondary-background-color;
+    font-family: $font-stack;
 
     @include tablet {
       height: 3rem;
