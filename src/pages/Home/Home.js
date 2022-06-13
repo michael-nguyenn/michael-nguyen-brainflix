@@ -2,6 +2,7 @@ import "./Home.scss";
 import { API_URL } from "../../utilities/apiUtils";
 import { Component } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 import Video from "../../components/Video/Video";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
@@ -79,14 +80,21 @@ class Home extends Component {
     });
 
     return (
-      <main>
-        {this.props.isUploaded && <UploadMessage />}
-        <Video image={image} />
-        <div className="video-wrapper">
-          <VideoInfo activeVideo={activeVideo} />
-          <VideoList nonActiveVideos={nonActiveVideos} />
-        </div>
-      </main>
+      <>
+        <Helmet>
+          <title>BrainFlix</title>
+          <meta name="description" content="Helmet application" />
+        </Helmet>
+
+        <main>
+          {this.props.isUploaded && <UploadMessage />}
+          <Video image={image} />
+          <div className="video-wrapper">
+            <VideoInfo activeVideo={activeVideo} />
+            <VideoList nonActiveVideos={nonActiveVideos} />
+          </div>
+        </main>
+      </>
     );
   }
 }

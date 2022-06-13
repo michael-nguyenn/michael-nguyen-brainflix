@@ -5,8 +5,6 @@ import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
 
-document.title = "BrainFlix";
-
 class App extends Component {
   // SETTING INITIAL STATE
   state = {
