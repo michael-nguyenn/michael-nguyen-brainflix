@@ -1,10 +1,10 @@
-import "./Header.scss";
+import "./HeaderComponent.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import Button from "../Button/Button";
 
-function Header() {
+function HeaderComponent() {
   return (
     <header>
       <nav className="nav">
@@ -21,7 +21,7 @@ function Header() {
               type="text"
               placeholder="Search"
             ></input>
-            <img src={avatar} alt="Avatar" className="avatar" />
+            <img src={avatar} alt="Mohan Murage" className="avatar" />
           </div>
 
           <Link to="/upload" className="button-wrapper">
@@ -35,4 +35,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderComponent;

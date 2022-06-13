@@ -9,7 +9,7 @@ function Comments({ comments }) {
       <h4 className="comments__count">{`${comments.length} Comments`}</h4>
       <div className="form">
         <article className="form__icon">
-          <img className="form__avatar" src={avatar} alt="Avatar" />
+          <img className="form__avatar" src={avatar} alt="Muhan Muruge" />
         </article>
 
         <form

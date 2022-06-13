@@ -1,63 +1,99 @@
 import "./Upload.scss";
-import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import videoThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import axios from "axios";
+import { API_URL } from "../../utilities/apiUtils";
+import { Helmet } from "react-helmet";
 
 function Upload(props) {
-  const redirect = (event) => {
+  // HANDLING CANCEL BUTTON TO REDIRECT TO HOME PAGE
+  function redirect(event) {
     event.preventDefault();
-    alert("Upload Success!");
     props.history.push("/");
-  };
+  }
+
+  // HANDLING FORM SUBMIT FOR NEW VIDEO UPLOADS
+  function handleOnSubmit(event) {
+    event.preventDefault();
+
+    //COLLECTING USER INPUT
+    const newVideoUpload = {
+      title: event.target.title.value,
+      description: event.target.description.value,
+    };
+
+    // MAKING POST REQUEST TO API ENDPOINT AND REDIRECT USER
+    axios
+      .post(API_URL, newVideoUpload)
+
+      .then(() => {
+        props.history.push("/");
+        props.handleUpload();
+        setTimeout(props.handleUpload, 2500);
+      });
+  }
 
   return (
-    <section className="publish">
-      <div className="publish__wrapper">
-        <h1 className="publish__title">Upload Video</h1>
+    <>
+      <Helmet>
+        <title>BrainFlix | Upload</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
 
-        <form onSubmit={redirect} className="publish-form">
-          <div className="publish-form__wrapper">
-            <div className="publish-thumbnail">
-              <h4 className="publish-thumbnail__title">VIDEO THUMBNAIL</h4>
-              <img
-                className="publish-thumbnail__picture"
-                src={videoThumbnail}
-                alt="video thumbnail"
-              />
+      <section className="publish">
+        <div className="publish__wrapper">
+          <h1 className="publish__title">Upload Video</h1>
+
+          <form onSubmit={handleOnSubmit} className="publish-form">
+            <div className="publish-form__wrapper">
+              <div className="publish-thumbnail">
+                <h4 className="publish-thumbnail__title">VIDEO THUMBNAIL</h4>
+                <img
+                  className="publish-thumbnail__picture"
+                  src={videoThumbnail}
+                  alt="video thumbnail"
+                />
+              </div>
+
+              <div className="publish-form__container">
+                <label className="publish-form__name">
+                  TITLE YOUR VIDEO
+                  <input
+                    className="publish-form__input"
+                    type="text"
+                    placeholder="Add a title to your video"
+                    name="title"
+                    required
+                  ></input>
+                </label>
+
+                <label className="publish-form__name">
+                  ADD A VIDEO DESCRIPTION
+                  <textarea
+                    className="publish-form__input publish-form__input--large"
+                    type="text"
+                    placeholder="Add a description to your video"
+                    name="description"
+                    required
+                  ></textarea>
+                </label>
+              </div>
             </div>
+            <div className="publish-form__button">
+              <Button className="button button--publish" name="PUBLISH" />
 
-            <div className="publish-form__container">
-              <label className="publish-form__name">
-                TITLE YOUR VIDEO
-                <input
-                  className="publish-form__input"
-                  type="text"
-                  placeholder="Add a title to your video"
-                  name="name"
-                ></input>
-              </label>
-
-              <label className="publish-form__name">
-                ADD A VIDEO DESCRIPTION
-                <textarea
-                  className="publish-form__input publish-form__input--large"
-                  type="text"
-                  placeholder="Add a description to your video"
-                  name="description"
-                ></textarea>
-              </label>
+              <button
+                onClick={redirect}
+                className="publish-form__cancel"
+                type="button"
+              >
+                CANCEL
+              </button>
             </div>
-          </div>
-          <div className="publish-form__button">
-            <Button className="button button--publish" name="PUBLISH" />
-
-            <Link to="/" className="publish-form__cancel">
-              CANCEL
-            </Link>
-          </div>
-        </form>
-      </div>
-    </section>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }
 

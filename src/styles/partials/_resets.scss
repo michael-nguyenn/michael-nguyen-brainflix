@@ -17,3 +17,8 @@ a {
   color: $primary-font-color;
   font-family: $font-stack;
 }
+
+a,
+button {
+  cursor: pointer;
+}
