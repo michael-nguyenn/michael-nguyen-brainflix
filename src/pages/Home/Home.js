@@ -62,9 +62,7 @@ class Home extends Component {
   }
 
   // FUNCTION TO GET VIDEO BY ID
-  getVideoById = (videoId) => {
-    return axios.get(`${API_URL}/${videoId}`);
-  };
+  getVideoById = (videoId) => axios.get(`${API_URL}/${videoId}`);
 
   render() {
     // SETTING CONDITIONAL TO ENSURE THAT DATA IS RETRIEVED BEFORE PASSING INTO OTHER COMPONENTS
