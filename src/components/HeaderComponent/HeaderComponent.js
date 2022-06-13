@@ -21,7 +21,7 @@ function HeaderComponent() {
               type="text"
               placeholder="Search"
             ></input>
-            <img src={avatar} alt="Avatar" className="avatar" />
+            <img src={avatar} alt="Mohan Murage" className="avatar" />
           </div>
 
           <Link to="/upload" className="button-wrapper">
